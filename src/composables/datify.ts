@@ -1,8 +1,9 @@
-import { Ref, watch, ref } from 'vue';
+import { Ref, watch, ref, onMounted } from 'vue';
 import dayjs from 'dayjs';
 import customParseFormat from 'dayjs/plugin/customParseFormat';
 dayjs.extend(customParseFormat);
 import { Mask } from 'maska';
+import Cleave from 'cleave.js';
 
 export const useDate = (
   remoteValue: Ref<string>,
@@ -40,3 +41,9 @@ export const useDate = (
 
   return { isValid, inputRef };
 };
+
+export const useCleave = (el: any, options = {}) => {
+    if (el) {
+      el.cleave = new Cleave(el, options)
+    }
+}
