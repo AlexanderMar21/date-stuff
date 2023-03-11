@@ -1,6 +1,7 @@
 <template>
   <div class="flex flex-col gap-8 w-400px mx-auto justify-center py-10">
-    <h1>Date</h1>
+    <h1>Maska && Dayjs</h1>
+    <p>20.02 kB │ gzip: 6.80 kB</p><br>
     <input
       type="tel"
       v-model="inputRef"
@@ -14,8 +15,6 @@
     <input type="date" v-model="value" />
     <br />
     <br />
-
-    <h1>Month</h1>
     <input
       type="tel"
       v-model="monthInput"
@@ -29,7 +28,8 @@
     <input type="month" v-model="monthValue" />
     <br />
 
-    <h1>Cleave.js</h1>
+    <h1>Cleave.js && Dayjs</h1>
+    <p>43.07 kB │ gzip: 12.16 kB</p><br>
     <input
       type="tel"
       ref="inputCleave"
@@ -41,6 +41,7 @@
     <p>
       {{ cleave }}
     </p>
+    <br>
     <input
       type="tel"
       ref="inputCleaveMonth"
@@ -56,8 +57,9 @@
 </template>
 
 <script setup lang="ts">
-import { useDate, useCleave } from './composables/datify';
-import { onMounted, ref, watch } from 'vue';
+import { useDate } from './composables/datify';
+import { useCleave } from './composables/cleave';
+import { onMounted, ref } from 'vue';
 
 const value = ref('1999-12-19');
 const monthValue = ref('1999-12');
