@@ -20,6 +20,7 @@ export const useDate = (
     isValid.value = parsed.isValid();
   }
   watch(remoteValue, (val) => {
+    console.log(val);
     if (val) {
       const parsed = dayjs(val, parseFormat, true);
       inputRef.value = parsed.format(format.toUpperCase());
@@ -37,5 +38,5 @@ export const useDate = (
     }
   });
 
-  return [isValid, inputRef];
+  return { isValid, inputRef };
 };
